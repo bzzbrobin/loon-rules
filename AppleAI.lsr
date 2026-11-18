@@ -1,0 +1,23 @@
+# AppleAI.lsr
+# 用途：让 Apple Intelligence（Siri 的 ChatGPT 扩展）与 ChatGPT 走支持地区的节点
+# 用法：放进 [Remote Rule] 最前面，例如
+#   https://<你的直链>/AppleAI.lsr, policy=美国手动策略, tag=AppleAI, enabled=true
+# 规则自带策略名 美国手动策略（你配置里第 52 行那个 select 组）；
+# 若 [Remote Rule] 行写了 policy=，则以行上的为准。
+
+# --- Apple Intelligence 地区判定 + Private Cloud Compute 中继 ---
+DOMAIN-SUFFIX,smoot.apple.com,美国手动策略
+DOMAIN,guzzoni.apple.com,美国手动策略
+DOMAIN,gspe1-ssl.ls.apple.com,美国手动策略
+DOMAIN-SUFFIX,ls.apple.com,美国手动策略
+DOMAIN,apple-relay.apple.com,美国手动策略
+DOMAIN,apple-relay.mask.apple-dns.net,美国手动策略
+DOMAIN,apple-relay.fastly-edge.com,美国手动策略
+DOMAIN,apple-relay.cloudflare.com,美国手动策略
+DOMAIN,cp4.cloudflare.com,美国手动策略
+
+# --- OpenAI / ChatGPT ---
+DOMAIN-SUFFIX,openai.com,美国手动策略
+DOMAIN-SUFFIX,chatgpt.com,美国手动策略
+DOMAIN-SUFFIX,oaistatic.com,美国手动策略
+DOMAIN-SUFFIX,oaiusercontent.com,美国手动策略

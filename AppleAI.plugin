@@ -1,0 +1,26 @@
+#!name = Apple AI 分流
+#!desc = 让 Apple Intelligence 的 ChatGPT 扩展与 ChatGPT 走支持地区的节点（配合 policy=美国手动策略 使用）
+#!author = 本地生成
+#!date = 2026-11-18
+#!tag = 分流,AI
+#!type = normal
+
+# 注意：插件规则只能写 DIRECT / REJECT / PROXY。
+# 这里统一写 PROXY，真实策略由配置里 [Plugin] 那一行的 policy= 决定：
+#   https://<直链>/AppleAI.plugin, policy=美国手动策略, enabled=true
+# 若漏写 policy=，PROXY 在你这套配置里没有内置 PROXY 组可用，规则会失效或走错。
+
+[Rule]
+DOMAIN-SUFFIX,smoot.apple.com,PROXY
+DOMAIN,guzzoni.apple.com,PROXY
+DOMAIN,gspe1-ssl.ls.apple.com,PROXY
+DOMAIN-SUFFIX,ls.apple.com,PROXY
+DOMAIN,apple-relay.apple.com,PROXY
+DOMAIN,apple-relay.mask.apple-dns.net,PROXY
+DOMAIN,apple-relay.fastly-edge.com,PROXY
+DOMAIN,apple-relay.cloudflare.com,PROXY
+DOMAIN,cp4.cloudflare.com,PROXY
+DOMAIN-SUFFIX,openai.com,PROXY
+DOMAIN-SUFFIX,chatgpt.com,PROXY
+DOMAIN-SUFFIX,oaistatic.com,PROXY
+DOMAIN-SUFFIX,oaiusercontent.com,PROXY
